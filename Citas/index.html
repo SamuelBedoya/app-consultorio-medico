@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/alertify.min.css" />
+
+</head>
+<body>
+    <div class="container mt-4 shadow-lg p-3 mb-5 rounded ">
+        <button id="btnAgendar" type="button" class="btn btn-info">Agendar Cita</button>
+        <table id = "citas" class = "table mt-2 table-bordered tablestriped"> 
+            <thead>
+                <tr class = "text-center">
+                    <th class="table-success">ID</th>
+                    <th class="table-success">Fecha</th>
+                    <th class="table-success">Nombre Medico</th>
+                    <th class="table-success">Descripcion</th>
+                </tr>
+            </thead>    
+        </table>
+    </div>
+
+    <div class="modal fade" id="modalCitas" tabindex="-1" arialabelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="exampleModalLabel">Citas</h5>
+                    <button type="button" class="btn-close" data-bsdismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                 <form>
+                    <div class="mb-3">
+                        <label for="IDcita" class="col-form-label">Id Cita: </label>
+                        <input id="IDcita" type="number" placeholder="Digite el identificador" class="form-control" id="recipient-name"
+                            required autocomplete="off"oninvalid="setCustomValidity('Digite un ID')"
+                            oninput="setCustomValidity('')">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="fechaCita" class="col-form-label">Fecha de la cita:</label>
+                            <input id="fechaCita" placeholder="Digite la fecha" type="date" class="form-control" id="recipient-name"
+                                required autocomplete="off" oninvalid="setCustomValidity('Digite la fecha')"
+                                oninput="setCustomValidity('')">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="nombreMedico" class="col-form-label">Nombre Medico: </label>
+                                <input id="nombreMedico" placeholder="Digite el nombre del medico" type="text" class="form-control" id="recipient-name" 
+                                    required autocomplete="off"oninvalid="setCustomValidity('Digite el nombre')"
+                                    oninput="setCustomValidity('')">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="descripcion" class="col-form-label">Descripcion del medicamento: </label>
+                                <input id="descripcion" placeholder="Ingrese una descripcion" type="text" class="form-control" id="recipient-name" 
+                                    required autocomplete="off"oninvalid="setCustomValidity('Ingrese descripcion')"
+                                    oninput="setCustomValidity('')">
+                            </div>
+
+                                <div class="modal-footer">
+                                <button type="button" id="btnCerrar" class="btn btn-secondary" data-bsdismiss="modal">Cerrar</button>
+                                <button type="submit" class="btn btn-success">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+            crossorigin="anonymous"></script>
+        <script src="js/alertify.min.js"></script>
+
+        <script src="js/citas.js"></script>
+
+
+
+
+</body>
+</html>
