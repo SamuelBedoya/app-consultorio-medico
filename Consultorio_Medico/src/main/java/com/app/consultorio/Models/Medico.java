@@ -5,8 +5,8 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
 
-@Entity
-@Table(name = "medico")
+@Table
+@Entity(name = "medico")
 public class Medico implements Serializable {
     @Id
     @Column(name="id_medico")
@@ -27,10 +27,12 @@ public class Medico implements Serializable {
     private String email;
     @Column(name = "clave_medico")
     private String clave;
+    @Column(name = "usuario_medico")
+    private String usuario;
     @Column(name = "fecha_naci_medico")
     private Date f_nacimiento;
 
-    public Medico(int id_medico, int identificacion, String nombre, String apellido, String ciudad, String direccion, String telefono, String email, String clave, Date f_nacimiento) {
+    public Medico(int id_medico, int identificacion, String nombre, String apellido, String ciudad, String direccion, String telefono, String email, String clave, String usuario,Date f_nacimiento) {
         this.id_medico = id_medico;
         this.identificacion = identificacion;
         this.nombre = nombre;
@@ -41,6 +43,7 @@ public class Medico implements Serializable {
         this.email = email;
         this.clave = clave;
         this.f_nacimiento = f_nacimiento;
+        this.usuario = usuario;
     }
 
     public Medico() {
@@ -125,6 +128,16 @@ public class Medico implements Serializable {
     public void setF_nacimiento(Date f_nacimiento) {
         this.f_nacimiento = f_nacimiento;
     }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+    
+    
     
     
 }

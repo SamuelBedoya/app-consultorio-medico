@@ -5,19 +5,19 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
 
-@Entity
-@Table(name="citas")
+@Table
+@Entity(name="citas")
 public class Citas implements Serializable{
     @Id
     @Column(name = "cod_cita")
     private int cod_cita;
     @ManyToOne
-    @JoinColumn(name = "id_paciente")
+    @JoinColumn(name = "_paciente")
     private Paciente id_paciente;
     @ManyToOne
-    @JoinColumn(name = "id_medico")
+    @JoinColumn(name = "_medico")
     private Medico id_medico;
-    @Column(name = "decrip")
+    @Column(name = "descrip")
     private String decripcion;
     @Column(name = "fecha_registro")
     private Date fecha_registro;

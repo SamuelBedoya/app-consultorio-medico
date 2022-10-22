@@ -5,8 +5,8 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
 
-@Entity
-@Table(name = "formulas")
+@Table
+@Entity(name = "formulas")
 public class Formulas implements Serializable{
     @Id
     @Column(name = "cod_formula")
