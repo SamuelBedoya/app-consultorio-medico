@@ -21,4 +21,11 @@ public class PacienteController {
         return service.findAll();
     }
     
+    @PostMapping(value="/")
+    public ResponseEntity<Paciente> agregar(@RequestBody Paciente paciente){
+        Paciente obj = service.save(paciente);
+        return new ResponseEntity<>(obj, HttpStatus.OK);
+    }
+            
+    
 }

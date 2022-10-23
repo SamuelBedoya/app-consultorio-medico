@@ -16,46 +16,57 @@
             <thead>
                 <tr class = "text-center">
                     <th class="table-success">ID</th>
-                    <th class="table-success">Fecha</th>
-                    <th class="table-success">Nombre Medico</th>
-                    <th class="table-success">Descripcion</th>
+                    <th class="table-success">Paciente</th>
+                    <th class="table-success">Medico</th>
+                    <th class="table-success">Fecha de la Cita</th>
+                    <th class="table-success">Descripción</th>
+                    <th class="table-success">Acciones</th>
+
                 </tr>
-            </thead>    
+            </thead>
+            <tbody>
+            </tbody>
         </table>
     </div>
 
-    <div class="modal fade" id="modalCitas" tabindex="-1" arialabelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal" id="modalCitas" tabindex="-1" arialabelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header bg-primary text-white">
                     <h5 class="modal-title" id="exampleModalLabel">Citas</h5>
-                    <button type="button" class="btn-close" data-bsdismiss="modal" aria-label="Close"></button>
+                    <button type="button" id="btnCerrar2" class="btn-close" data-bsdismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                  <form>
                     <div class="mb-3">
-                        <label for="IDcita" class="col-form-label">Id Cita: </label>
-                        <input id="IDcita" type="number" placeholder="Digite el identificador" class="form-control" id="recipient-name"
+                         <label for="IdPaciente" class="col-form-label">Id Paciente: </label>
+                        <input id="IdPaciente" type="number" placeholder="Digite el id del paciente" class="form-control" id="recipient-name"
                             required autocomplete="off"oninvalid="setCustomValidity('Digite un ID')"
                             oninput="setCustomValidity('')">
                         </div>
-                        
+                        <!--
                         <div class="mb-3">
                             <label for="fechaCita" class="col-form-label">Fecha de la cita:</label>
                             <input id="fechaCita" placeholder="Digite la fecha" type="date" class="form-control" id="recipient-name"
                                 required autocomplete="off" oninvalid="setCustomValidity('Digite la fecha')"
                                 oninput="setCustomValidity('')">
-                            </div>
-
+                            </div> -->
                             <div class="mb-3">
-                                <label for="nombreMedico" class="col-form-label">Nombre Medico: </label>
-                                <input id="nombreMedico" placeholder="Digite el nombre del medico" type="text" class="form-control" id="recipient-name" 
+                                <label for="IdMedico" class="col-form-label">Id Medico: </label>
+                                <input id="IdMedico" placeholder="Digite el id del medico" type="number" class="form-control" id="recipient-name" 
                                     required autocomplete="off"oninvalid="setCustomValidity('Digite el nombre')"
                                     oninput="setCustomValidity('')">
                             </div>
 
                             <div class="mb-3">
-                                <label for="descripcion" class="col-form-label">Descripcion del medicamento: </label>
+                                <label for="FechaCita" class="col-form-label">Fecha de la cita: </label>
+                                <input id="FechaCita"  type="date" class="form-control" id="recipient-name" 
+                                    required autocomplete="off"oninvalid="setCustomValidity('Digite el nombre')"
+                                    oninput="setCustomValidity('')">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="descripcion" class="col-form-label">Descripción de la cita: </label>
                                 <input id="descripcion" placeholder="Ingrese una descripcion" type="text" class="form-control" id="recipient-name" 
                                     required autocomplete="off"oninvalid="setCustomValidity('Ingrese descripcion')"
                                     oninput="setCustomValidity('')">
@@ -80,9 +91,5 @@
         <script src="js/alertify.min.js"></script>
 
         <script src="js/citas.js"></script>
-
-
-
-
 </body>
 </html>

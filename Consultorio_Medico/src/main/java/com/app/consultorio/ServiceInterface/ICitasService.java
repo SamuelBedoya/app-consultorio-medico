@@ -12,6 +12,5 @@ public interface ICitasService {
     public void delete(Integer id);
     public Citas findById(Integer id);
     public List<Citas> findAll();
-    public Citas add(Paciente paciente, Medico medico, String descrip, Date fecha_r, Date fecha_c);
     
 }

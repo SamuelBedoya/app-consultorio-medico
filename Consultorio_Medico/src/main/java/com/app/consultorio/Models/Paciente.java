@@ -31,9 +31,9 @@ public class Paciente implements Serializable {
     @Column(name = "usuario_paciente")
     private String usuario;
     @Column(name = "fecha_naci_paciente")
-    private Date f_nacimiento;
+    private String f_nacimiento;
 
-    public Paciente(int id_paciente, int identificacion, String nombre, String apellido, String ciudad, String direccion, String telefono, String email, String clave,String usuario, Date f_nacimiento) {
+    public Paciente(int id_paciente, int identificacion, String nombre, String apellido, String ciudad, String direccion, String telefono, String email, String clave,String usuario, String f_nacimiento) {
         this.id_paciente = id_paciente;
         this.identificacion = identificacion;
         this.nombre = nombre;
@@ -122,11 +122,11 @@ public class Paciente implements Serializable {
         this.clave = clave;
     }
 
-    public Date getF_nacimiento() {
+    public String getF_nacimiento() {
         return f_nacimiento;
     }
 
-    public void setF_nacimiento(Date f_nacimiento) {
+    public void setF_nacimiento(String f_nacimiento) {
         this.f_nacimiento = f_nacimiento;
     }
 

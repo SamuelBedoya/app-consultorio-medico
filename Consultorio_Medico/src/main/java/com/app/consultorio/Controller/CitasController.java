@@ -3,10 +3,6 @@ package com.app.consultorio.Controller;
 
 import com.app.consultorio.Models.Citas;
 import com.app.consultorio.ServiceInterface.ICitasService;
-import java.util.GregorianCalendar;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashSet;
 
 import java.util.List;
 
@@ -35,7 +31,7 @@ public class CitasController {
     
     @PostMapping(value="/")
     public ResponseEntity<Citas> agregarCita(@RequestBody Citas cita){
-        Citas obj = citaService.add(cita.getId_paciente(),cita.getId_medico(),cita.getDecripcion(),cita.getFecha_registro(),cita.getFecha_cita());
+        Citas obj = citaService.save(cita);
         return new ResponseEntity<>(obj, HttpStatus.OK);
     }
     

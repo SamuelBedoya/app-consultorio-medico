@@ -37,10 +37,5 @@ public class CitasService implements ICitasService{
     public List<Citas> findAll() {
         return (List<Citas>) daoCita.findAll();
     }
-
-    @Override
-    public Citas add(Paciente paciente, Medico medico, String descrip, Date fecha_r, Date fecha_c) {
-        return daoCita.insertaCita(paciente, medico, descrip, fecha_r, fecha_c);
-    }
     
 }
