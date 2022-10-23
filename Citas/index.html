@@ -39,7 +39,8 @@
                 <div class="modal-body">
                  <form>
                     <div class="mb-3">
-                         <label for="IdPaciente" class="col-form-label">Id Paciente: </label>
+                        <input type="number" hidden id="codCita">
+                        <label for="IdPaciente" class="col-form-label">Id Paciente: </label>
                         <input id="IdPaciente" type="number" placeholder="Digite el id del paciente" class="form-control" id="recipient-name"
                             required autocomplete="off"oninvalid="setCustomValidity('Digite un ID')"
                             oninput="setCustomValidity('')">

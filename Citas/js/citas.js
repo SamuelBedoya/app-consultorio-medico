@@ -12,6 +12,7 @@ const idMedico = document.getElementById('IdMedico')
 const idPaciente = document.getElementById('IdPaciente')
 const fechaCita = document.getElementById('FechaCita')
 const descripcionCitas = document.getElementById('descripcion')
+const codCita = document.getElementById('codCita')
 
 let opcion = ''
 
@@ -73,7 +74,7 @@ on(document, 'click', '.btnEditar', e => {
     const fecha = fila.children[5].innerHTML 
     const desc = fila.children[6].innerHTML 
 
-    
+    codCita.value = idForm
     idMedico.value = nombreMedico
     idPaciente.value = nombrePaciente
     fechaCita.value = fecha
@@ -136,13 +137,16 @@ formCitas.addEventListener('submit', (e) => {
             headers: { 
                 'Content-Type': 'application/json' 
             }, 
-            body: JSON.stringify({ 
-                idProveedor: idForm, 
-                nombreProveedor: nombreProveedor.value, 
-                emailProveedor: emailProveedor.value 
-            }) 
+            body: JSON.stringify({
+                cod_cita: codCita.value,
+                id_medico: {id_medico: idMedico.value}, 
+                id_paciente: {id_paciente: idPaciente.value},
+                decripcion: descripcionCitas.value,
+                fecha_registro: fechaCita.value
+            })
+                
         }) 
-            .then(response => location.reload()) 
+            .then(() => location.reload())
     } 
 
     $('#modalCitas').modal('hide');

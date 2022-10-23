@@ -15,28 +15,32 @@ public class PacienteService implements IPacienteService{
     private PacienteDAO dao;
 
     @Override
+    @Transactional(readOnly = false)
     public Paciente save(Paciente paciente) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return dao.save(paciente);
     }
 
     @Override
+    @Transactional(readOnly = false)
     public void delete(Integer id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        dao.deleteById(id);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Paciente findById(Integer id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       return dao.findById(id).orElse(null);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Paciente> findAll() {
         return (List<Paciente>) dao.findAll();
     }
 
     @Override
-    public Paciente loginPaciente(String usuario, String clave) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean loginPaciente(String usuario, String clave) {
+       return dao.loginPaciente(usuario, clave);
     }
     
 }

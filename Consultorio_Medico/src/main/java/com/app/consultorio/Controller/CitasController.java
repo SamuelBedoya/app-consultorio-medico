@@ -46,5 +46,20 @@ public class CitasController {
        return new ResponseEntity<>(obj, HttpStatus.OK);
     }
     
+    @PutMapping(value="/")
+    public ResponseEntity<Citas> editar(@RequestBody Citas cita){
+        Citas obj = citaService.findById(cita.getCod_cita());
+        if(obj != null){
+            obj.setId_medico(cita.getId_medico());
+            obj.setId_paciente(cita.getId_paciente());
+            obj.setFecha_registro(cita.getFecha_registro());
+            obj.setDecripcion(cita.getDecripcion());
+            citaService.save(obj);
+        }else{
+            return new ResponseEntity<>(obj, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        return new ResponseEntity<>(obj, HttpStatus.OK);
+    }
+    
    
 }

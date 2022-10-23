@@ -9,6 +9,6 @@ public interface IMedicoService {
     public void delete(Integer id);
     public Medico findById(Integer id);
     public List<Medico> findAll();
-    public Medico loginMedico(String usuario,String clave);
+    public boolean loginMedico(String usuario,String clave);
     
 }

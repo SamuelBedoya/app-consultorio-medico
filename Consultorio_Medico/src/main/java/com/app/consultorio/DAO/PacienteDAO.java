@@ -13,6 +13,6 @@ public interface PacienteDAO extends CrudRepository<Paciente, Integer>{
     
     @Transactional(readOnly = true)
     @Query(value = "SELECT * FROM paciente WHERE usuario_paciente = :usuario AND clave_paciente = :clave", nativeQuery = true)
-    public Paciente loginPaciente(@Param("usuario") String usuario, @Param("clave") String clave);
+    public boolean loginPaciente(@Param("usuario") String usuario, @Param("clave") String clave);
     
 }

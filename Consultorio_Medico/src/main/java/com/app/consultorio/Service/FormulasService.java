@@ -1,44 +1,41 @@
 
 package com.app.consultorio.Service;
 
-import com.app.consultorio.DAO.CitasDAO;
-import com.app.consultorio.Models.Citas;
-
-import com.app.consultorio.ServiceInterface.ICitasService;
-import java.util.Date;
+import com.app.consultorio.DAO.FormulasDAO;
+import com.app.consultorio.Models.Formulas;
+import com.app.consultorio.ServiceInterface.IFormulasService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.stereotype.Service;
 
-
 @Service
-public class CitasService implements ICitasService{
+public class FormulasService implements IFormulasService{
     @Autowired
-    private CitasDAO daoCita;
+    private FormulasDAO dao;
 
     @Override
     @Transactional(readOnly = false)
-    public Citas save(Citas cita) {
-        return daoCita.save(cita);
+    public Formulas save(Formulas cita) {
+        return dao.save(cita);
     }
 
     @Override
     @Transactional(readOnly = false)
     public void delete(Integer id) {
-        daoCita.deleteById(id);
+        dao.deleteById(id);
     }
 
     @Override
     @Transactional(readOnly = true)
-    public Citas findById(Integer id) {
-        return daoCita.findById(id).orElse(null);
+    public Formulas findById(Integer id) {
+        return dao.findById(id).orElse(null);
     }
 
     @Override
     @Transactional(readOnly = true)
-    public List<Citas> findAll() {
-        return (List<Citas>) daoCita.findAll();
+    public List<Formulas> findAll() {
+        return (List<Formulas>) dao.findAll();
     }
     
 }
