@@ -14,47 +14,41 @@
         <table id = "medicamentos" class = "table mt-2 table-bordered tablestriped"> 
             <thead>
                 <tr class = "text-center">
-                    <th class="table-success">ID Medicamento</th>
-                    <th class="table-success">ID Cita</th>
+                    <th class="table-success"> Formula </th>
+                    <th class="table-success">Cita</th>
+                    <th class="table-success">Descripción de Cita</th>
                     <th class="table-success">Fecha Cita</th>
-                    <th class="table-success">Medicamento Formulado</th>
-                    <th class="table-success">Descripciones</th>
+                    <th class="table-success">Paciente</th>
+                    <th class="table-success">Medicamentos Formulados</th>
+                    <th class="table-success">Descripcion</th>
+                    <th class="table-success">Acciones</th>
                 </tr>
             </thead>    
+            <tbody>
+
+            </tbody>
         </table>
     </div>
 
-    <div class="modal fade" id="modalMedicamentos" tabindex="-1" arialabelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal" id="modalFormulas" tabindex="-1" arialabelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header bg-primary text-white">
                     <h5 class="modal-title" id="exampleModalLabel">Medicamentos</h5>
-                    <button type="button" class="btn-close" data-bsdismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close" id="btnCerrar2" data-bsdismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                  <form>
-                    <div class="mb-3">
-                        <label for="IDmedicamento" class="col-form-label">Id Medicamento: </label>
-                        <input id="IDmedicamento" type="number" placeholder="Digite el identificador" class="form-control" id="recipient-name"
-                            required autocomplete="off"oninvalid="setCustomValidity('Digite un ID')"
-                            oninput="setCustomValidity('')">
-                        </div>
+                    <input type="number" hidden id="codFormula">
                         <div class="mb-3">
                             <label for="IDcita" class="col-form-label">ID cita:</label>
-                            <input id="IDcita" placeholder="Digite el identificador" type="text" class="form-control" id="recipient-name"
+                            <input id="IDcita" placeholder="Digite el id de la cita" type="number" class="form-control" id="recipient-name"
                                 required autocomplete="off" oninvalid="setCustomValidity('Digite un ID')"
                                 oninput="setCustomValidity('')">
                             </div>
                             <div class="mb-3">
-                                <label for="fechaCita" class="col-form-label">Fecha de la cita: </label>
-                                <input id="fechaCita" placeholder="Digite la fecha" type="date" class="form-control" id="recipient-name" 
-                                    required autocomplete="off"oninvalid="setCustomValidity('Digite una direccion')"
-                                    oninput="setCustomValidity('')">
-                            </div>
-
-                            <div class="mb-3">
                                 <label for="medFormulado" class="col-form-label">Medicamento Formulado: </label>
-                                <input id="medFormulado" placeholder="Ingrese en medicamento" type="text" class="form-control" id="recipient-name" 
+                                <input id="medFormulado" placeholder="Ingrese los medicamentos" type="text" class="form-control" id="recipient-name" 
                                     required autocomplete="off"oninvalid="setCustomValidity('Digite un medicamento')"
                                     oninput="setCustomValidity('')">
                             </div>
