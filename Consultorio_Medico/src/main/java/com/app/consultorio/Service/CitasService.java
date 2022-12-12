@@ -5,7 +5,6 @@ import com.app.consultorio.DAO.CitasDAO;
 import com.app.consultorio.Models.Citas;
 
 import com.app.consultorio.ServiceInterface.ICitasService;
-import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;

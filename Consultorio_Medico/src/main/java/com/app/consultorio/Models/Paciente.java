@@ -3,7 +3,6 @@ package com.app.consultorio.Models;
 
 
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.*;
 
 @Table
