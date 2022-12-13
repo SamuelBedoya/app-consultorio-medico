@@ -1,43 +1,42 @@
 
 package com.app.consultorio.Controller;
 
-import com.app.consultorio.Models.Paciente;
-import com.app.consultorio.ServiceInterface.IPacienteService;
+import com.app.consultorio.Models.Medico;
+import com.app.consultorio.ServiceInterface.IMedicoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.app.consultorio.Security.Hash;
-
 @RestController
 @CrossOrigin("*")
-@RequestMapping("/paciente")
-public class PacienteController {
+@RequestMapping("/medico")
+public class MedicoController {
+    
     @Autowired
-    private IPacienteService service;
+    private IMedicoService service;
     
     @GetMapping("/list")
-    public List<Paciente> listar(){
+    public List<Medico> listar(){
         return service.findAll();
     }
     
     @GetMapping("/list/{id}")
-    public Paciente consultar(@PathVariable Integer id){
+    public Medico consultar(@PathVariable Integer id){
         return service.findById(id);
     }
     
     @PostMapping(value="/")
-    public ResponseEntity<Paciente> agregar(@RequestBody Paciente paciente){
-        Paciente obj = service.save(paciente);
+    public ResponseEntity<Medico> agregar(@RequestBody Medico paciente){
+        Medico obj = service.save(paciente);
         return new ResponseEntity<>(obj, HttpStatus.OK);
     }
     
     
     @DeleteMapping(value="/{id}")
-    public ResponseEntity<Paciente> eliminar(@PathVariable Integer id){
-        Paciente obj = service.findById(id);
+    public ResponseEntity<Medico> eliminar(@PathVariable Integer id){
+        Medico obj = service.findById(id);
         if(obj != null){
             service.delete(id);
         }else{
@@ -48,8 +47,8 @@ public class PacienteController {
     
     
     @PutMapping(value="/")
-    public ResponseEntity<Paciente> editar(@RequestBody Paciente pa){
-        Paciente obj = service.findById(pa.getId_paciente());
+    public ResponseEntity<Medico> editar(@RequestBody Medico pa){
+        Medico obj = service.findById(pa.getId_medico());
         if(obj != null){
             obj.setNombre(pa.getNombre());
             obj.setApellido(pa.getApellido());
@@ -66,13 +65,6 @@ public class PacienteController {
             return new ResponseEntity<>(obj, HttpStatus.INTERNAL_SERVER_ERROR);
         }
         return new ResponseEntity<>(obj, HttpStatus.OK);
-    }
-            
-    @GetMapping("/login")
-    @ResponseBody
-    public Paciente ingresar(@RequestParam String usuario,@RequestParam String clave) {
-        //clave=Hash.sha1(clave);
-        return service.loginPaciente(usuario, clave); 
     }
     
 }

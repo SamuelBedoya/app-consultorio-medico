@@ -1,39 +1,38 @@
 
 package com.app.consultorio.Models;
 
-
 import java.io.Serializable;
 import javax.persistence.*;
 
 @Table
-@Entity(name = "paciente")
-public class Paciente implements Serializable {
+@Entity(name = "medico")
+public class Medico implements Serializable {
     @Id
-    @Column(name="id_paciente")
-    private int id_paciente;
-    @Column(name ="cod_paciente")
+    @Column(name="id_medico")
+    private int id_medico;
+    @Column(name ="cod_medico")
     private int identificacion;
-    @Column(name ="nombre_paciente")
+    @Column(name ="nombre_medico")
     private String nombre;
-    @Column(name = "apellido_paciente")
+    @Column(name = "apellido_medico")
     private String apellido;
-    @Column(name = "ciudad_paciente")
+    @Column(name = "ciudad_medico")
     private String ciudad;
-    @Column(name = "direcc_paciente")
+    @Column(name = "direcc_medico")
     private String direccion;
-    @Column(name = "tel_paciente")
+    @Column(name = "tel_medico")
     private String telefono;
-    @Column(name = "email_paciente")
+    @Column(name = "email_medico")
     private String email;
-    @Column(name = "clave_paciente")
+    @Column(name = "clave_medico")
     private String clave;
-    @Column(name = "usuario_paciente")
+    @Column(name = "usuario_medico")
     private String usuario;
-    @Column(name = "fecha_naci_paciente")
+    @Column(name = "fecha_naci_medico")
     private String f_nacimiento;
 
-    public Paciente(int id_paciente, int identificacion, String nombre, String apellido, String ciudad, String direccion, String telefono, String email, String clave,String usuario, String f_nacimiento) {
-        this.id_paciente = id_paciente;
+    public Medico(int id_medico, int identificacion, String nombre, String apellido, String ciudad, String direccion, String telefono, String email, String clave, String usuario,String f_nacimiento) {
+        this.id_medico = id_medico;
         this.identificacion = identificacion;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -46,15 +45,15 @@ public class Paciente implements Serializable {
         this.usuario = usuario;
     }
 
-    public Paciente() {
+    public Medico() {
     }
 
-    public int getId_paciente() {
-        return id_paciente;
+    public int getId_medico() {
+        return id_medico;
     }
 
-    public void setId_paciente(int id_paciente) {
-        this.id_paciente = id_paciente;
+    public void setId_medico(int id_medico) {
+        this.id_medico = id_medico;
     }
 
     public int getIdentificacion() {
@@ -136,6 +135,7 @@ public class Paciente implements Serializable {
     public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
+    
     
     
     
