@@ -1,7 +1,8 @@
 import swal from "sweetalert";
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
+
 
 //const URI = "http://localhost:8080/paciente/";
 const URI = "http://150.136.150.224:8080/consultorio/paciente/";
@@ -71,6 +72,11 @@ const Login = () =>{
                     className="form-control"
                 />
             </div>
+            <div className="mb-3">
+                <span >¿Aún no tiene cuenta?</span>
+                <Link to={`/registro`} className="btn btn-success"><strong>Regístrate</strong></Link>
+            </div>
+            
             <button type="submit" className="btn btn-primary">
             Login
             </button>

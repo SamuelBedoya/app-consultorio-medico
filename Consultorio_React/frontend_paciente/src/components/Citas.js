@@ -40,6 +40,7 @@ const Cita = () => {
     return(
 
     <div className='container'>
+        {/* <Link to={`/crear`} className="btn btn-success">Crear cita</Link> */}
         <div className='row'>
             <div className='col'>
                 <table className='table'>

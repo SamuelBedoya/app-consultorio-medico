@@ -4,7 +4,7 @@ import Menu from './components/Menu';
 import Login from './components/Login';
 import Logout from './components/Logout';
 import Cita from './components/Citas';
-
+import Registro from './components/Registro';
 import { HashRouter,BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -19,6 +19,7 @@ function App() {
             <Route path='/logout' element={<Logout />} />
             <Route path='/logout' element={<Logout />} />
             <Route path='/citas' element={<Cita />} />
+            <Route path='/registro' element={<Registro />} />
           </Routes>
         </BrowserRouter>
       </div>
